@@ -1,11 +1,6 @@
 import React from 'react';
-import nightCloudy from "../../../../../img/nightCloudy.svg";
 import moment from 'moment';
 import { NavLink } from "react-router-dom";
-import WeatherFetcher from '../../WeatherFetcher';
-import HourlyWeather from '../Hourly';
-import TenDayWeather from '../FiveDay';
-import ForecastTabs from '../../ForecastTabs';
 import clearSky from "../../../../../img/openWeather/clearSky.png";
 import fewClouds from "../../../../../img/openWeather/fewClouds.png";
 import scatteredClouds from "../../../../../img/openWeather/scatteredClouds.png";
@@ -15,15 +10,6 @@ import rain from "../../../../../img/openWeather/rain.png";
 import thunderstorm from "../../../../../img/openWeather/thunderstorm.png";
 import snow from "../../../../../img/openWeather/snow.png";
 import mist from "../../../../../img/openWeather/mist.png";
-
-const dummy = {
-    "coord": { "lon": -0.13, "lat": 51.51 },
-    "weather": [{ "id": 300, "main": "Drizzle", "description": "light intensity drizzle", "icon": "09d" }],
-    "base": "stations", "main": { "temp": 280.32, "pressure": 1012, "humidity": 81, "temp_min": 279.15, "temp_max": 281.15 },
-    "visibility": 10000, "wind": { "speed": 4.1, "deg": 80 }, "clouds": { "all": 90 }, "dt": 1485789600,
-    "sys": { "type": 1, "id": 5091, "message": 0.0103, "country": "GB", "sunrise": 1485762037, "sunset": 1485794875 },
-    "id": 2643743, "name": "Tokyo", "cod": 200
-}
 
 // Get current time and assign to variable
 const currentTime = moment(Date.now()).format('MMMM Do YYYY, h:mm a')
