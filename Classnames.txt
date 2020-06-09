@@ -1,0 +1,3 @@
+className is used only as a placeholder and/or to help organize components more easily
+
+Actual CSS properties are defined in their respective Styled Component
