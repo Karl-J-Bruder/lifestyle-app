@@ -42,9 +42,6 @@ const WeatherPage = (props) => {
                 <p>Need to check weather for a different city?</p>
                 <WeatherFetcher />
             </div>
-            <Route path="/weather/hourly" component={HourlyWeather} />
-            <Route path="/weather/ten-day" component={TenDayWeather} />
-            <Route path="/weather/current" component={WeatherFetcher} />
         </div>
     );
 }
