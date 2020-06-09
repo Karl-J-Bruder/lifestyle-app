@@ -1,9 +1,7 @@
 import React, { useEffect, useContext, useState } from 'react';
 import { Link } from "react-router-dom";
-import firebase from "../../../../firebase";
 import { FirebaseContext } from '../../../../firebase';
 import ShoppingListItem from '../ShoppingListItem';
-import { StyledAddNewButton } from "../../../../styles/Shopping/StyledShoppingListItem";
 
 const ShoppingListPage = (props) => {
     const { firebase, user } = useContext(FirebaseContext);

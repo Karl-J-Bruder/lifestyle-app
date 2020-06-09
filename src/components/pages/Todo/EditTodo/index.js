@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import useReactRouter from "use-react-router";
 import moment from "moment";
-import { Link } from "react-router-dom";
 import { FirebaseContext } from '../../../../firebase';
 import M from 'materialize-css';
 import { buttonStyles } from "../../../../styles/theme";

@@ -11,7 +11,7 @@ const ShoppingItemDetails = () => {
 
     const [itemDetails, setItemDetails] = useState({})
     const [isComplete, setIsComplete] = useState(false);
-    const { history, location, match } = useReactRouter();
+    const { history, match } = useReactRouter();
     const { firebase } = useContext(FirebaseContext);
 
     // Get data from Firebase

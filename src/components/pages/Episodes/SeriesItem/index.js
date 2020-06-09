@@ -1,7 +1,5 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { FirebaseContext } from '../../../../firebase';
-import M from 'materialize-css';
-import { Link } from 'react-router-dom';
 import { buttonStyles, buttonContentStyles } from "../../../../styles/theme";
 
 const SeriesItem = ({ seriesItem, index }) => {

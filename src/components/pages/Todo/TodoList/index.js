@@ -4,7 +4,7 @@ import { FirebaseContext } from '../../../../firebase';
 import TodoItem from '../TodoItem';
 
 
-const TodoListPage = () => {
+const TodoListPage = (props) => {
     const { firebase, user } = useContext(FirebaseContext);
     const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.getItem("userCred")));
     const [todos, setTodos] = useState([])
