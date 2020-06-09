@@ -83,11 +83,9 @@ function WeatherFetcher() {
         baseUrl + query + suffix,
         []
     );
-    console.log("data: ", data);
     useEffect(() => {
         setCityNameState(data && data.name);
         setCityTempState(data && data.main && data.main.temp);
-        console.log("This fired")
         if (isArray(data.weather) && data.weather.length > 0) {
             setCityWeatherDescState(data.weather[0].main);
         }

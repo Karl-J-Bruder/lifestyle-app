@@ -19,24 +19,21 @@ const WeatherPage = (props) => {
             if (doc.exists) {
                 const city = doc.data().city.toLowerCase();
                 setUserCity(city);
-                console.log("Current user city: ", userCity)
             }
         })
     }
 
-    // if (!user) {
-    //     // props.history.push("/login")
-    //     console.log("Redirect")
-    // } else {
-    //     const userRef = firebase.db.collection("users").doc(`${user.uid}`);
-    //     userRef.get().then(doc => {
-    //         if (doc.exists) {
-    //             const city = doc.data().city.toLowerCase();
-    //             setUserCity(city);
-    //             console.log("Current user city: ", userCity)
-    //         }
-    //     })
-    // }
+    if (!user) {
+        props.history.push("/login")
+    } else {
+        const userRef = firebase.db.collection("users").doc(`${user.uid}`);
+        userRef.get().then(doc => {
+            if (doc.exists) {
+                const city = doc.data().city.toLowerCase();
+                setUserCity(city);
+            }
+        })
+    }
     return (
         <div>
             <h1>Weather Page</h1>

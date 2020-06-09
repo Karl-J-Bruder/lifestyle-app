@@ -8,9 +8,6 @@ function useAuth() {
             if (user) {
                 setAuthUser(user)
                 localStorage.setItem("userCred", JSON.stringify(user));
-                console.log("Added to localstorage: ", JSON.parse(localStorage.getItem("userCred")));
-                // localStorage.setItem("userProfile", JSON.stringify(loggedInUser));
-                // console.log("Added to localstorage: ", JSON.parse(localStorage.getItem("userProfile")));
             } else {
                 setAuthUser(null)
             }

@@ -8,13 +8,9 @@ const TodoListPage = () => {
     const { firebase, user } = useContext(FirebaseContext);
     const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.getItem("userCred")));
     const [todos, setTodos] = useState([])
-    //@@@ comment out next 5 lines For development only (no redirect)
-    // if (!user) {
-    //     props.history.push("/login")
-    // } else {
-    //     console.log(user)
-    // }
-
+    if (!user) {
+        props.history.push("/login")
+    }
     useEffect(() => {
         let info = JSON.parse(localStorage.getItem("userCred"));
         setCurrentUser(info)

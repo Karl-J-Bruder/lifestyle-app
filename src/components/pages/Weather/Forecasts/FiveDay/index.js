@@ -32,7 +32,7 @@ const FiveDayForecast = () => {
             setResponseObj(data);
             setLoading(false)
         } catch (error) {
-            console.log(error);
+            console.error(error);
             setError(true);
             setLoading(false);
         }

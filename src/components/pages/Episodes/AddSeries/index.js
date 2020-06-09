@@ -5,8 +5,6 @@ import { FirebaseContext } from "../../../../firebase";
 import { Link } from "react-router-dom";
 import M from 'materialize-css';
 
-// @@@ Allow submission without description
-
 // Used by useFormValidation custom hook
 const INITIAL_STATE = {
     title: "",

@@ -22,20 +22,15 @@ const Login = (props) => {
 
     // Respond to invalid user credentials
     async function authenticateUser() {
-        console.log("Is submitting: ", isSubmitting)
         try {
             const { email, password } = values;
-            console.log("Is submitting: ", isSubmitting)
             await firebase.login(email, password);
-            console.log("Is submitting: ", isSubmitting)
             props.history.push("/")
         } catch (error) {
             console.error("Authentication Error: Login ", error)
             setFirebaseError(error.message)
         }
-        console.log("Is submitting: ", isSubmitting)
     }
-    console.log("Is submitting: ", isSubmitting)
     return (
         <div className="container">
             <h1>Log In Page</h1>

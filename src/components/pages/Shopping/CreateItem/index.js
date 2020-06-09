@@ -4,8 +4,6 @@ import validateCreateShoppingListItem from "../../../auth/validateCreateShopping
 import { FirebaseContext } from "../../../../firebase";
 import { Link } from "react-router-dom";
 
-// @@@ Allow submission without description
-
 const INITIAL_STATE = {
     title: "",
     description: ""

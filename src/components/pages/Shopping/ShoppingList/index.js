@@ -9,19 +9,13 @@ const ShoppingListPage = (props) => {
     const { firebase, user } = useContext(FirebaseContext);
     const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.getItem("userCred")));
     const [shoppingListItems, setShoppingListItems] = useState([])
-    //@@@ comment out next 5 lines For development only (no redirect)
-    // if (!user) {
-    //     props.history.push("/login")
-    // } else {
-    //     console.log(user)
-    // }
+    if (!user) {
+        props.history.push("/login")
+    }
     useEffect(() => {
         let info = JSON.parse(localStorage.getItem("userCred"));
-        console.log("Retrieved by shoppingList: ", info)
         setCurrentUser(info)
-        console.log("USER: ", currentUser)
         getItems()
-        console.log("CURRENT USER: ", currentUser)
     }, [])
 
 
@@ -35,10 +29,6 @@ const ShoppingListPage = (props) => {
         })
         const filteredShoppingListItems = shoppingListItems.filter(shoppingListItem => shoppingListItem.addedBy.id === currentUser.uid)
         setShoppingListItems(filteredShoppingListItems);
-
-
-        // @@@ For development only (non-filtered list)
-        // setShoppingListItems(shoppingListItems)
     }
 
     return (

@@ -12,10 +12,8 @@ import ShoppingListPage from "../components/pages/Shopping/ShoppingList";
 import ShoppingItemDetails from "../components/pages/Shopping/ItemDetails";
 import CreateShoppingItem from "../components/pages/Shopping/CreateItem";
 import EditShoppingItem from "../components/pages/Shopping/EditItem";
-import WeatherPage from "../components/pages/Weather/MainPage";
 import EpisodeTrackerPage from "../components/pages/Episodes/EpisodeTracker";
 import EditSeriesDetailsPage from "../components/pages/Episodes/EditSeriesDetailsPage";
-import Footer from '../components/Footer/Footer';
 import Nav from "../components/Nav";
 import useAuth from "../components/auth/useAuth";
 import firebase, { FirebaseContext } from "../firebase";
@@ -29,8 +27,6 @@ const AppRouter = () => {
 
     return (
         <BrowserRouter>
-            {/* value needs two sets of curly braces {{ }} to pass multiple values
-            Here, we're passing user information and firebase methods into the context */}
             <FirebaseContext.Provider value={{ user, firebase }}>
                 <div className="app-container">
                     <Header />
@@ -56,7 +52,6 @@ const AppRouter = () => {
                         </Switch>
                     </div>
                     {user && <Nav />}
-                    {/* <Footer /> */}
                 </div>
             </FirebaseContext.Provider>
         </BrowserRouter>

@@ -54,7 +54,7 @@ const EpisodeTable = () => {
                 setCount({ ...count, book: count.book += 1 });
                 break
             default:
-                console.log("Series category not found")
+                console.error("Series category not found")
         }
     }
 

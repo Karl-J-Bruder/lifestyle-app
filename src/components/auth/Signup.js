@@ -12,7 +12,6 @@ const INITIAL_STATE = {
 }
 
 const Signup = (props) => {
-    // @@@ Redirect user to homepage if already logged in
     const { handleChange, handleSubmit, handleBlur, errors, values, isSubmitting } = useFormValidation(INITIAL_STATE, validateLogin, authenticateUser)
     //State for Firebase auth errors
     const [firebaseError, setFirebaseError] = useState(null);
