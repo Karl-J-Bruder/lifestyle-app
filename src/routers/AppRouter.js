@@ -28,9 +28,9 @@ const AppRouter = () => {
     return (
         <BrowserRouter>
             <FirebaseContext.Provider value={{ user, firebase }}>
-                <div className="app-container">
+                <div>
                     <Header />
-                    <div className="route-container" style={{ minHeight: "40vh" }}>
+                    <div className="section" style={{ marginBottom: "4rem" }}>
                         <Switch>
                             <Route exact path="/" component={Homepage} />
                             <Route path="/login" component={Login} />

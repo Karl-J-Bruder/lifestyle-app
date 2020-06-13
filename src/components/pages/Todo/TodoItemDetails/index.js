@@ -48,7 +48,7 @@ const TodoItemDetails = () => {
         setIsComplete(!isComplete);
     }
     return (
-        <div className="container">
+        <div className="section center-align">
             <h1>Todo Item Details</h1>
             <div className="divider"></div>
             <div className="section">

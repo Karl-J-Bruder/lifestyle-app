@@ -30,7 +30,7 @@ const ShoppingListPage = (props) => {
     }
 
     return (
-        <div>
+        <div className="container center-align">
             <h1>Shopping List</h1>
             <div className="section">
                 <Link to="/create-shopping-list-item">
@@ -40,7 +40,7 @@ const ShoppingListPage = (props) => {
                     </button>
                 </Link>
             </div>
-            <div style={{ display: "flex", flexDirection: "column" }}>
+            <div className="center-align" style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 {shoppingListItems.map((shoppingListItem, index) => (
                     <ShoppingListItem shoppingListItem={shoppingListItem} key={shoppingListItem.id} showCount={true} index={index + 1} />
                 ))}

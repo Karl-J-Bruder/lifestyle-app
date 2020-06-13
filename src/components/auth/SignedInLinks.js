@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { FirebaseContext } from '../../firebase';
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 const SignedInLinks = (props) => {
     const { firebase } = useContext(FirebaseContext)
@@ -12,9 +12,9 @@ const SignedInLinks = (props) => {
     return (
         <nav>
             <div className="nav-wrapper teal">
-                <a href="#" className="brand-logo left hide-on-large-only">LIFESTYLE APP</a>
+                <Link href="/" className="brand-logo left" style={{ paddingLeft: "10px" }}>LIFESTYLE APP</Link>
                 <ul id="nav-mobile" className="right">
-                    <li onClick={() => handleLogout()}>Log Out</li>
+                    <li style={{ fontSize: "1.25rem", paddingRight: "15px" }} onClick={() => handleLogout()}>Log Out</li>
                 </ul>
             </div>
         </nav>

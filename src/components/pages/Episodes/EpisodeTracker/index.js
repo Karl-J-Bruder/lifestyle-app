@@ -11,7 +11,7 @@ const EpisodeTrackerPage = () => {
     }, []);
 
     return (
-        <div>
+        <div className="section center-align">
             <h3>Episode Tracker Page</h3>
             <div className="section conatiner">
                 <a href="/add-series">
@@ -20,19 +20,6 @@ const EpisodeTrackerPage = () => {
                         <i className="material-icons right">add</i>
                     </button>
                 </a>
-            </div>
-            <div className="section conatiner">
-                <a className='dropdown-trigger btn' href='#' data-target='dropdown1'>Sort by</a>
-                {/* <!-- Dropdown Structure --> */}
-                <ul id='dropdown1' className='dropdown-content'>
-                    <li><a href="#!"><i className="material-icons">play_circle_outline</i>Anime</a></li>
-                    <li className="divider" tabIndex="-1"></li>
-                    <li><a href="#!"><i className="material-icons">image</i>Manga</a></li>
-                    <li className="divider" tabIndex="-1"></li>
-                    <li><a href="#!"><i className="material-icons">tv</i>TV</a></li>
-                    <li className="divider" tabIndex="-1"></li>
-                    <li><a href="#!"><i className="material-icons">book</i>Book</a></li>
-                </ul>
             </div>
             <EpisodeTable />
             <div className="section"></div>

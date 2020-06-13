@@ -51,7 +51,7 @@ const EditTodo = () => {
     }
 
     return (
-        <div className="container">
+        <div className="section center-align" style={{ padding: "0 1rem 0 1rem" }}>
             <div className="divider"></div>
             <div className="section">
                 <p className="flow-text">Title: {todoDetails.title}</p>
@@ -69,11 +69,11 @@ const EditTodo = () => {
                 </div>
                 <div className="divider"></div>
             </div>
-            <div>
+            <div className="section center-align">
                 <p className="flow-text">Edit this item:</p>
-                <form onSubmit={handeEditTodo}>
-                    <p className="left">Title of Todo</p>
+                <form onSubmit={handeEditTodo} style={{ display: "flex", flexDirection: "column", justifyContent: "space-around" }}>
                     <div className="input-field">
+                        <p className="left">Title of Todo</p>
                         <input
                             type="text" id="title" name="title"
                             value={todoDetails.title}

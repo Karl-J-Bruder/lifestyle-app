@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 const Forecast = () => {
     // Load user profile from localStorage, extract user's city and set as default form inpu
-    const [userProfile, setUserProfile] = useState(JSON.parse(localStorage.getItem("userProfile")))
-    let [city, setCity] = useState(userProfile ? userProfile.city : '');
+    // const [userProfile, setUserProfile] = useState(JSON.parse(localStorage.getItem("userProfile")))
+    let [city, setCity] = useState('');
     let [responseObj, setResponseObj] = useState({});
     let [unit, setUnit] = useState('imperial');
     let [error, setError] = useState(false);
@@ -45,7 +45,7 @@ const Forecast = () => {
         }
     }
     return (
-        <div>
+        <div className="container center-align">
             <div>
                 <h1>Find Current Weather Conditions</h1>
                 <div className="section">
@@ -59,11 +59,9 @@ const Forecast = () => {
                 <form onSubmit={getForecast}>
                     <div className="row">
                         <div className="col s12 m10 offset-m1 l8 offset-l2  valign-wrapper center-align">
-                            <div className="col s5 m5 l4" >
-                                <span className="flow-text">Get weather for:</span>
-                            </div>
-                            <div className="col s7 m7 l8">
-                                <div className="input-field">
+                            <span className="flow-text" style={{ marginRight: "2rem" }}>Get weather for:</span>
+                            <div>
+                                <div className="input-field" style={{ minWidth: "150px", maxWidth: "250px" }}>
                                     <input
                                         type="text"
                                         placeholder="Enter City"
@@ -77,8 +75,8 @@ const Forecast = () => {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="container col s6 offset-s3 m6 offset-m3 l6 offset-l3">
-                            <label className="left white-text">
+                        <div className="container" style={{ display: "flex", flexDirection: "row", justifyContent: "center" }} >
+                            <label className="left">
                                 <input
                                     type="radio"
                                     name="units"
@@ -88,7 +86,7 @@ const Forecast = () => {
                                 />
                                 <span>Fahrenheit</span>
                             </label>
-                            <label className="white-text">
+                            <label>
                                 <input
                                     type="radio"
                                     name="units"
@@ -108,13 +106,8 @@ const Forecast = () => {
                     responseObj={responseObj}
                     error={error}
                     loading={loading}
+                    city={city}
                 />
-            </div>
-            <div className="row">
-                <div className="flow-text col s8 offset-s2 m4 l4">
-                    <p>Need weather for another location?</p>
-                    <p>Enter a new city and press 'Get Weather'</p>
-                </div>
             </div>
         </div>
     )

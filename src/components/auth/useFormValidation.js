@@ -1,6 +1,6 @@
 // Custom hook for form input
 // Suitable for cases when you may have multiple forms that can't be handled with useState
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function useFormValidation(initialState, validate, authenticate) {
     const [values, setValues] = useState({})
@@ -33,7 +33,7 @@ function useFormValidation(initialState, validate, authenticate) {
         }));
     }
 
-    // Validate when user clicks away from a field (i.e. a "blur" event)
+    // Validate when user clicks away from a field ("blur" event)
     function handleBlur() {
         const validationErrors = validate(values);
         setErrors(validationErrors);

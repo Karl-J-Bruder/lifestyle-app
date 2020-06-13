@@ -22,8 +22,8 @@ const Login = (props) => {
 
     // Respond to invalid user credentials
     async function authenticateUser() {
+        const { name, email, password } = values;
         try {
-            const { email, password } = values;
             await firebase.login(email, password);
             props.history.push("/")
         } catch (error) {
@@ -66,39 +66,40 @@ const Login = (props) => {
                     />
                     <label htmlFor="password">Password</label>
                 </div>
-                <div>
-
+                <div className="center-align red-text">
                     {errors.password && <p>{errors.password}</p>}
                     {firebaseError && <p>{firebaseError}</p>}
                 </div>
-                <div className="section">
+                <div className="section center-align">
                     <button
                         className="btn btn-large waves-effect waves-light"
                         type="submit"
                         name="action"
                         disabled={isSubmitting}
-                        style={{ minWidth: "325px" }}
+                        style={{ minWidth: "300px" }}
                     >
                         <span>Log In</span>
                         <i className="material-icons right">send</i>
                     </button>
                 </div>
             </form>
-            <div className="section">
-                <Link to="/signup">
-                    <button className="btn btn-large waves-effect waves-light yellow darken-3">
-                        <span>Need to create an account?</span>
-                        <i className="material-icons right">person_add</i>
-                    </button>
-                </Link>
-            </div>
-            <div className="section">
-                <Link to="/forgot-password">
-                    <button className="btn btn-large waves-effect waves-light red darken-3" style={{ minWidth: "325px" }}>
-                        <span>Forgot Password?</span>
-                        <i className="material-icons right">help_outline</i>
-                    </button>
-                </Link>
+            <div className="center-align">
+                <div className="section">
+                    <Link to="/signup">
+                        <button className="btn btn-large waves-effect waves-light yellow darken-3" style={{ minWidth: "300px" }}>
+                            <span>Need to create an account?</span>
+                            <i className="material-icons right">person_add</i>
+                        </button>
+                    </Link>
+                </div>
+                <div className="section">
+                    <Link to="/forgot-password">
+                        <button className="btn btn-large waves-effect waves-light red darken-3" style={{ minWidth: "300px" }}>
+                            <span>Forgot Password?</span>
+                            <i className="material-icons right">help_outline</i>
+                        </button>
+                    </Link>
+                </div>
             </div>
         </div>
     )

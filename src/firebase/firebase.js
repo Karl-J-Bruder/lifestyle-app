@@ -2,6 +2,7 @@ import app from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from "./config";
 import "firebase/firestore";
+import uuid from "uuid/v4";
 
 class Firebase {
 
@@ -21,7 +22,9 @@ class Firebase {
         //firebase method
         // return promise that updateProfile gives us
         return await newUser.user.updateProfile({
-            displayName: username
+            displayName: username,
+            city,
+            id: uuid()
         })
     }
 

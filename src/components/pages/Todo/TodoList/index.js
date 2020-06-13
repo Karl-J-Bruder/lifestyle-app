@@ -30,7 +30,7 @@ const TodoListPage = (props) => {
     }
 
     return (
-        <div>
+        <div className="container center-align">
             <h1>To-do List</h1>
             <div className="section">
                 <Link to="/create-todo-item">
@@ -40,7 +40,7 @@ const TodoListPage = (props) => {
                     </button>
                 </Link>
             </div>
-            <div style={{ display: "flex", flexDirection: "column" }}>
+            <div className="center-align" style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 {todos.map((todo, index) => (
                     <TodoItem todo={todo} key={todo.id} showCount={true} index={index + 1} />
                 ))}

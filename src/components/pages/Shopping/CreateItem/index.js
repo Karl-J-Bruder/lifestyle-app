@@ -35,7 +35,7 @@ const CreateShoppingListItem = (props) => {
         }
     }
     return (
-        <div className="container">
+        <div className="section center-align">
             <h1>Add new shopping list item</h1>
             <div className="container section">
                 <form onSubmit={handleSubmit}>

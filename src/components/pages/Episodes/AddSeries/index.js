@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import useFormValidation from '../../../auth/useFormValidation';
 import validateAddSeries from "../../../auth/validateAddSeries";
 import { FirebaseContext } from "../../../../firebase";
@@ -45,7 +45,7 @@ const AddSeries = (props) => {
         }
     }
     return (
-        <div>
+        <div className="section center-align">
             <h1>Add a new series</h1>
             <div className="container section">
                 <form onSubmit={handleSubmit}>

@@ -35,7 +35,7 @@ const CreateTodo = (props) => {
         }
     }
     return (
-        <div className="container">
+        <div className="section center-align">
             <h1>Create New To-do</h1>
             <div className="container section">
                 <form onSubmit={handleSubmit}>

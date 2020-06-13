@@ -59,7 +59,7 @@ const EpisodeTable = () => {
     }
 
     return (
-        <div>
+        <div className="section center-align" style={{ marginLeft: "3vw" }}>
             <table className="striped">
                 <thead>
                     <tr>

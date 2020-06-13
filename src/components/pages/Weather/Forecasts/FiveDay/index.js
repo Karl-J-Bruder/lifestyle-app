@@ -3,12 +3,24 @@ import moment from "moment";
 
 const FiveDayForecast = () => {
     // Load user profile from localStorage, extract user's city and set as default form inpu
-    const [userProfile, setUserProfile] = useState(JSON.parse(localStorage.getItem("userProfile")))
-    let [city, setCity] = useState(userProfile ? userProfile.city : '');
+    // const [userProfile, setUserProfile] = useState(JSON.parse(localStorage.getItem("userProfile")))
+    let [city, setCity] = useState('');
     let [responseObj, setResponseObj] = useState({});
     let [unit, setUnit] = useState('imperial');
     let [error, setError] = useState(false);
     let [loading, setLoading] = useState(false);
+
+    const convertKelvinToCelsius = (tempK) => {
+        let celsius = (tempK - 273.15).toFixed(1);
+
+        return celsius
+    }
+
+    const convertKelvinToFahrenheit = (tempK) => {
+        let fahrenheit = ((tempK - 273.15) + 32).toFixed(1);
+        return fahrenheit
+    }
+
     const getForecast = async (e) => {
         try {
             e.preventDefault();
@@ -38,32 +50,29 @@ const FiveDayForecast = () => {
         }
     }
     return (
-        <div>
+        <div className="container center-align">
             <div>
                 <h1>5-day Weather Forecast</h1>
                 <form onSubmit={getForecast}>
                     <div className="row">
                         <div className="col s12 m10 offset-m1 l8 offset-l2  valign-wrapper center-align">
-                            <div className="col s5 m5 l4" >
-                                <span className="flow-text">Get weather for:</span>
-                            </div>
-                            <div className="col s7 m7 l8">
-                                <div className="input-field">
-                                    <input
-                                        type="text"
-                                        placeholder="Enter City"
-                                        id="city_name_inline"
-                                        maxLength="50"
-                                        value={city}
-                                        onChange={(e) => setCity(e.target.value)}
-                                    />
-                                </div>
+                            <span className="flow-text" style={{ marginRight: "2rem" }}>Get weather for:</span>
+
+                            <div className="input-field" style={{ minWidth: "150px", maxWidth: "250px" }}>
+                                <input
+                                    type="text"
+                                    placeholder="Enter City"
+                                    id="city_name_inline"
+                                    maxLength="50"
+                                    value={city}
+                                    onChange={(e) => setCity(e.target.value)}
+                                />
                             </div>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="container col s6 offset-s3 m6 offset-m3 l6 offset-l3">
-                            <label className="left white-text">
+                        <div className="container" style={{ display: "flex", flexDirection: "row", justifyContent: "center" }} >
+                            <label className="left">
                                 <input
                                     type="radio"
                                     name="units"
@@ -73,7 +82,7 @@ const FiveDayForecast = () => {
                                 />
                                 <span>Fahrenheit</span>
                             </label>
-                            <label className="white-text">
+                            <label>
                                 <input
                                     type="radio"
                                     name="units"
@@ -106,8 +115,8 @@ const FiveDayForecast = () => {
                             return (
                                 <tr className="row" key={index}>
                                     <td>{moment.unix(block.dt).format("ddd h A")}</td>
-                                    <td>{block.main?.temp_max}</td>
-                                    <td>{block.main?.temp_min}</td>
+                                    {unit === 'imperial' ? <td>{convertKelvinToFahrenheit(block.main?.temp_max)}</td> : <td>{convertKelvinToCelsius(block.main?.temp_max)}</td>}
+                                    {unit === 'imperial' ? <td>{convertKelvinToFahrenheit(block.main?.temp_min)}</td> : <td>{convertKelvinToCelsius(block.main?.temp_min)}</td>}
                                     <td>{block.weather[0]?.main}</td>
                                 </tr>
                             )
@@ -116,10 +125,6 @@ const FiveDayForecast = () => {
                 </table>
             </div>
             <div className="section" />
-            <div>
-                <p>Need weather for another location?</p>
-                <p>Enter a new city and press 'Get Forecast'</p>
-            </div>
         </div>
     )
 }

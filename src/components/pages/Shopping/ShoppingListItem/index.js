@@ -25,11 +25,11 @@ const ShoppingListItem = ({ shoppingListItem, showCount, index }) => {
         setIsComplete(!isComplete);
     }
     return (
-        <div className="section">
-            <div className="row">
-                <div className="col s12 m12 l6">
+        <div className="section center-align">
+            <div className="row" style={{ height: "12vw" }}>
+                <div className="col s12 m12 l12">
                     <div className="card-panel horizontal grey lighten-4 black-text"
-                        style={{ height: "15vh", width: "95vw", margin: "1vh auto" }}
+                        style={{ display: "flex", justifyContent: "space-between", margin: "1rem 0 1rem 0", padding: "5px 5px 0 5px" }}
                     >
                         <div className="card-title left">
                             <div>
@@ -37,11 +37,11 @@ const ShoppingListItem = ({ shoppingListItem, showCount, index }) => {
                                 <span className="flow-text">{shoppingListItem.title}</span>
                             </div>
                             <div>
-                                <p className="flow-text">Complete? {shoppingListItem.completed ? "Yes" : "No"}</p>
+                                <p className="flow-text" style={{ paddingLeft: "10px" }}>Complete? {shoppingListItem.completed ? "Yes" : "No"}</p>
                             </div>
                         </div>
                         {/* Change size of buttons & content based on screen width */}
-                        <div className="card-content right">
+                        <div className="card-content right" style={{ padding: "15px 5px 15px 0" }}>
                             <Link to={`/shopping-list-item-details/${shoppingListItem.id}`}>
                                 {window.screen.width < 450 ?
                                     <button className="btn-floating light-blue darken-4" style={{ margin: "0 5px" }}>

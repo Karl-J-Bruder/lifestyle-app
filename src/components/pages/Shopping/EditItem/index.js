@@ -52,7 +52,7 @@ const EditShoppingItem = () => {
     }
 
     return (
-        <div className="container">
+        <div className="section center-align" style={{ padding: "0 1rem 0 1rem" }}>
             <div className="divider"></div>
             <div className="section">
                 <p className="flow-text">Title: {itemDetails.title}</p>
@@ -70,11 +70,11 @@ const EditShoppingItem = () => {
                 </div>
                 <div className="divider"></div>
             </div>
-            <div>
+            <div className="section center-align">
                 <p className="flow-text">Edit this item:</p>
-                <form onSubmit={handeEditItem}>
-                    <p className="left">Item Name</p>
+                <form onSubmit={handeEditItem} style={{ display: "flex", flexDirection: "column", justifyContent: "space-around" }}>
                     <div className="input-field">
+                        <p className="left">Item Name</p>
                         <input
                             type="text" id="title" name="title"
                             value={itemDetails.title}
@@ -95,7 +95,7 @@ const EditShoppingItem = () => {
                     </button>
                 </form>
             </div>
-            <div className="section">
+            <div className="section center-align">
                 <button className="btn-large red accent-4 modal-trigger" data-target="confirmDeleteModal" style={{ minWidth: "257px" }}>
                     <span>Delete</span>
                     <i className="material-icons right">delete</i>

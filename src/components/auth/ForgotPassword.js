@@ -24,13 +24,14 @@ const ForgotPassword = () => {
         }
     }
     return (
-        <div>
+        <div className="section container center-align">
             <h1>Reset Password</h1>
             <div>
                 <label htmlFor="email">Email</label>
                 <input type="text" placeholder="Enter email" onChange={handleChange} />
             </div>
-            <button onClick={handleResetPassword}>Reset Password</button>
+            <div className="section" />
+            <button className="btn btn-large" onClick={handleResetPassword}>Reset Password</button>
             {isPasswordReset && <p>Check your email to reset your password</p>}
             {passwordResetError && <p>{passwordResetError}</p>}
         </div>
